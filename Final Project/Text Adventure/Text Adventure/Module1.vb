@@ -24,7 +24,9 @@
 
     Sub GameStart()
         Console.WriteLine()
-        Console.WriteLine("Hi from Game Start!")
+        Console.WriteLine("Hello, stranger. What's your name?")
+        Dim playerName As String = Console.ReadLine()
+        Console.WriteLine("Well It's nice to meet you " + playerName + ".")
     End Sub
 
 End Module
