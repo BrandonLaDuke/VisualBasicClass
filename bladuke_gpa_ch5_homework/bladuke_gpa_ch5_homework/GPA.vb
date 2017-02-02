@@ -61,7 +61,7 @@
         totalGrades = grade1 + grade2 + grade3 + grade4
         totalHours = cr1 + cr2 + cr3 + cr4
         gpa = (totalGrades * totalHours) / totalHours
-
+        gpa.ToString()
         'Print GPA
         txtGPA.Text = gpa
     End Sub
