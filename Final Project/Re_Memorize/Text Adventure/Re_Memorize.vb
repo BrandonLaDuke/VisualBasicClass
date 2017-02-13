@@ -1,4 +1,4 @@
-﻿Module Module1
+﻿Module Re_Memorize
     Dim playerName As String
     Sub Main()
         Dim quitGame As Boolean = 0

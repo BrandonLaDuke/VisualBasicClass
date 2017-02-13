@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6E2ED69F-6501-4928-BD7C-916029CA5EC9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Text_Adventure.Module1</StartupObject>
+    <StartupObject>Text_Adventure.Re_Memorize</StartupObject>
     <RootNamespace>Text_Adventure</RootNamespace>
     <AssemblyName>Text Adventure</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -68,7 +68,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Module1.vb" />
+    <Compile Include="Re_Memorize.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
