@@ -3,7 +3,8 @@
     Sub Main()
         Dim quitGame As Boolean = 0
         Console.WriteLine("The Year is 2086, Memories can be uploaded, downloaded, traded, and shared.")
-        Console.WriteLine("It was all safe and secure, well so we thought. Two years ago a company by the name of Memorize, located in Neo Paris, created a network that allowed for the digitising of human memories.")
+        Console.WriteLine("It was all safe and secure, well so we thought. Two years ago a company by the name of Memorize, located in Neo Paris,")
+        Console.WriteLine("created a network that allowed for the digitizing of human memories.")
         Console.WriteLine("Every thing seemed to work alright and be very benificial to the public. Untill things went wrong. Very wrong...")
         Console.WriteLine()
         Console.WriteLine("Press Any Key to continue.")
@@ -54,6 +55,10 @@
                 Case "1"
                     'got it and start main game
                     Choice = True
+                    Console.WriteLine()
+                    Console.WriteLine("Great!, Good Luck!")
+                    Console.WriteLine()
+                    Threading.Thread.Sleep(500)
                     MainGame()
                     Exit Select
                 Case "2"
@@ -76,10 +81,15 @@
 
 
     End Sub
+
     Sub Instructions()
-        Console.WriteLine("I am VBasic this game will take you on a journey to meet a few of my friends.")
-        Console.WriteLine("You will be able to choose from your Voice Control Panel (VCP) to choose what you want to say.")
-        Console.WriteLine("To do this you will choose a number from the VCP.")
+        Console.WriteLine()
+        Console.WriteLine("------------Instructions------------")
+        Console.WriteLine()
+        Console.WriteLine("This game is played by answering questions by selecting a number option from the menu,")
+        Console.WriteLine("and then pressing enter.")
+        Console.WriteLine("There will also ocasionaly be an open ended question.")
+        Console.WriteLine()
         Console.WriteLine("Do you understand this " + playerName + "?")
     End Sub
 
