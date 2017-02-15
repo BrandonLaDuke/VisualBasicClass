@@ -1,5 +1,8 @@
 ﻿Module Re_Memorize
     Dim playerName As String
+    'Ferdinan
+    'Johnny
+    '
     Sub Main()
         Dim quitGame As Boolean = 0
         Console.WriteLine("The Year is 2086, Memories can be uploaded, downloaded, traded, and shared.")
@@ -94,7 +97,62 @@
     End Sub
 
     Sub MainGame()
-        Console.WriteLine("Hello from the main game!")
+        Console.WriteLine("Voice: " + playerName + " Run! Got to get out of there! Quick!")
+        Console.ReadKey()
+        Console.WriteLine(playerName + ": Don't worry, I'll be fine. I'm almost there.")
+        Console.WriteLine()
+        Console.ReadKey()
+        Console.WriteLine("You run around a corner and get hit by a S.A.B.R.E. Agent")
+        Console.WriteLine()
+        Threading.Thread.Sleep(2000)
+        Console.WriteLine("You blacked out...")
+        Console.ReadKey()
+        Console.WriteLine()
+        Console.WriteLine(playerName + ": (Screaming In Pain)")
+        Console.ReadKey()
+        Console.WriteLine(playerName + "AHHHHHHH! AHHHHHHHH! AHHHHHHHHH!")
+        Console.Clear()
+
+        'Start Chapter 0
+        Chapter0()
+
+    End Sub
+
+    Sub Chapter0()
+        Console.ReadKey()
+        Console.WriteLine("Machine shuts off...")
+        Console.ReadKey()
+        Console.WriteLine("Robotic Voice: Memory Erase complete.")
+        Console.ReadKey()
+        Console.WriteLine(playerName + ": (breathing heavy)")
+        Console.ReadKey()
+        Console.WriteLine("You realize you are laying in the center of a room.")
+        Console.ReadKey()
+        Console.WriteLine("A person approches you holding some files. There dressed in a doctor uniform maybe?")
+        Console.ReadKey()
+        Console.WriteLine("Stranger: What is your name?")
+        Console.Write(">> ")
+        Dim nameCheck As String
+        nameCheck = Console.ReadLine()
+        Dim i As Integer = 0
+        If nameCheck = playerName Then
+            i = 1
+        End If
+        While i = 0
+            Console.WriteLine()
+            Console.WriteLine("Use your name that you used at the start of the game: " + playerName)
+            Console.WriteLine()
+            Console.WriteLine("Stranger: What is your name?")
+            Console.Write(">> ")
+            nameCheck = ""
+            nameCheck = Console.ReadLine()
+            If nameCheck = playerName Then
+                i = 1
+            End If
+        End While
+        Console.WriteLine()
+        Console.WriteLine("Stranger: What year is it?")
+        Console.WriteLine(playerName + ": I don't know")
     End Sub
 
     Sub Credits()
