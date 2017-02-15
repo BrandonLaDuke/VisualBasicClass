@@ -190,7 +190,29 @@
         End While
         Console.WriteLine()
         Console.WriteLine("Stranger: What year is it?")
+        Console.ReadKey()
         Console.WriteLine(playerName + ": I don't know")
+        Console.ReadKey()
+        Console.WriteLine("Stranger: What did you say your name was?")
+        Console.ReadKey()
+        Console.WriteLine(playerName + ": ... " + playerName + ".")
+        Console.ReadKey()
+        Console.WriteLine("Do you know where you are?")
+        Dim localQ As String
+        Console.Write(">>")
+        localQ = Console.ReadLine()
+        If localQ = "IDK" Or "I don't know" Or "idk" Or "i dont know" Or "I dont know" Or "here" Then
+            Console.WriteLine()
+            Console.WriteLine("Stranger: So you don't know.")
+            Console.ReadKey()
+            Console.WriteLine("Stranger: Very well.")
+        ElseIf localQ = "" Then
+            Console.WriteLine("Stranger: How do you know that?")
+            Console.ReadKey()
+
+        Else
+
+        End If
     End Sub
 
     Sub Credits()
