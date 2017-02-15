@@ -41,9 +41,34 @@
     Sub GameStart()
         Console.WriteLine()
         Console.WriteLine("Hello, stranger. What's your name?")
+        Console.Write(">>")
+        Dim nameCor As Boolean = False
+        Dim nameChk As Integer = 0
         playerName = Console.ReadLine()
+        Console.WriteLine("You said your name is " + playerName + ". Correct?")
+        Console.WriteLine("[1] That's Right [2] Nope, that's not right.")
+        nameChk = Console.ReadLine()
+
+        While nameCor = False
+            If nameChk = 1 Then
+                nameCor = True
+            ElseIf nameChk = 2 Then
+                GetName()
+            Else
+                nameCor = False
+                Console.WriteLine("I did not understand your answer.")
+            End If
+            If nameCor = False Then
+                Console.WriteLine("You said your name is " + playerName + ". Correct?")
+                Console.WriteLine("[1] That's Right [2] Nope, that's not right.")
+                nameChk = Console.ReadLine()
+            End If
+        End While
         Console.WriteLine("Well It's nice to meet you " + playerName + ".")
         Threading.Thread.Sleep(1000)
+        Console.WriteLine("I will now tell you how to play.")
+        Console.ReadKey()
+        Console.Clear()
         'Get Instructions from instructions module
         Instructions()
         Console.WriteLine("[1] Yes I got it. [2] Could you repeat that?")
@@ -61,7 +86,9 @@
                     Console.WriteLine()
                     Console.WriteLine("Great!, Good Luck!")
                     Console.WriteLine()
-                    Threading.Thread.Sleep(500)
+                    Threading.Thread.Sleep(1500)
+                    Console.Clear()
+                    Threading.Thread.Sleep(1000)
                     MainGame()
                     Exit Select
                 Case "2"
@@ -74,6 +101,8 @@
                 Case Else
                     Console.WriteLine()
                     Console.WriteLine("I don't understand what you meant by: " + numInput)
+                    Console.WriteLine()
+                    Console.WriteLine("[1] Yes I got it. [2] Could you repeat that?")
                     numInput = ""
                     numInput = Console.ReadLine()
             End Select
@@ -83,6 +112,15 @@
         numInput = ""
 
 
+    End Sub
+
+    Sub GetName()
+        Dim nameCor As Boolean = False
+        Dim nameChk As Integer = 0
+        playerName = ""
+        Console.WriteLine("I'm sorry, What's your name again?")
+        Console.Write(">>")
+        playerName = Console.ReadLine()
     End Sub
 
     Sub Instructions()
@@ -97,12 +135,18 @@
     End Sub
 
     Sub MainGame()
-        Console.WriteLine("Voice: " + playerName + " Run! Got to get out of there! Quick!")
+        'Start Chapter 0
+        Chapter0()
+
+    End Sub
+
+    Sub Chapter0()
+        Console.WriteLine("Voice: " + playerName + " Run! You got to get out of there! Quick!")
         Console.ReadKey()
         Console.WriteLine(playerName + ": Don't worry, I'll be fine. I'm almost there.")
         Console.WriteLine()
         Console.ReadKey()
-        Console.WriteLine("You run around a corner and get hit by a S.A.B.R.E. Agent")
+        Console.WriteLine("You run around a corner and get hit by a S.A.B.R.E. Force Agent")
         Console.WriteLine()
         Threading.Thread.Sleep(2000)
         Console.WriteLine("You blacked out...")
@@ -113,12 +157,6 @@
         Console.WriteLine(playerName + "AHHHHHHH! AHHHHHHHH! AHHHHHHHHH!")
         Console.Clear()
 
-        'Start Chapter 0
-        Chapter0()
-
-    End Sub
-
-    Sub Chapter0()
         Console.ReadKey()
         Console.WriteLine("Machine shuts off...")
         Console.ReadKey()
@@ -184,10 +222,6 @@
             Console.Write(".")
             creditTimer = creditTimer - 1
         End While
-        While creditTimer < 5
-            Console.WriteLine()
-            creditTimer = creditTimer + 1
-        End While
-
+        Console.Clear()
     End Sub
 End Module
