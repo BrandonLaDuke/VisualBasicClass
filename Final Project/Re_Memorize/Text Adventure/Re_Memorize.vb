@@ -156,7 +156,6 @@
         Console.ReadKey()
         Console.WriteLine(playerName + "AHHHHHHH! AHHHHHHHH! AHHHHHHHHH!")
         Console.Clear()
-
         Console.ReadKey()
         Console.WriteLine("Machine shuts off...")
         Console.ReadKey()
@@ -173,6 +172,8 @@
         Dim nameCheck As String
         nameCheck = Console.ReadLine()
         Dim i As Integer = 0
+
+        'Check if you remember your own name.
         If nameCheck = playerName Then
             i = 1
         End If
@@ -188,6 +189,7 @@
                 i = 1
             End If
         End While
+
         Console.WriteLine()
         Console.WriteLine("Stranger: What year is it?")
         Console.ReadKey()
@@ -197,45 +199,23 @@
         Console.ReadKey()
         Console.WriteLine(playerName + ": ... " + playerName + ".")
         Console.ReadKey()
-        Console.WriteLine("Do you know where you are?")
-        Dim localQ As String
-        Console.Write(">>")
-        localQ = Console.ReadLine()
-        If localQ = "IDK" Or "I don't know" Or "idk" Or "i dont know" Or "I dont know" Or "here" Then
-            Console.WriteLine()
-            Console.WriteLine("Stranger: So you don't know.")
-            Console.ReadKey()
-            Console.WriteLine("Stranger: Very well.")
-        ElseIf localQ = "" Then
-            Console.WriteLine("Stranger: How do you know that?")
-            Console.WriteLine("[1] ...  [2] I don't know")
-            Dim knowLocal As Integer
-            Dim kLocal As Boolean
-            Console.WriteLine()
-            knowLocal = Console.ReadLine()
-            While kLocal = False
-                If knowLocal = 1 Then
-                    kLocal = True
-                ElseIf knowLocal = 2 Then
-                    Console.WriteLine("Stranger: Okay.")
-                    kLocal = True
-                Else
-                    Console.WriteLine("Invalid Command.")
-                    Threading.Thread.Sleep(500)
-                    Console.WriteLine()
-                    Console.WriteLine("[1] ...  [2] I don't know")
-                    knowLocal = ""
-                    knowLocal = Console.ReadLine()
-                End If
-            End While
-        Else
-
-        End If
+        Console.WriteLine("Stranger: Do you know where you are?")
+        Console.ReadKey()
+        Console.WriteLine(playerName + ": I don't know")
+        Console.ReadKey()
         Console.WriteLine("Stranger: We'll get those last few memories scraped away soon.")
         Console.ReadKey()
-
+        Console.WriteLine("Stranger wallks away leaving you alone.")
+        Console.WriteLine()
+        Console.ReadKey()
+        Chapter0_1()
     End Sub
 
+    Sub Chapter0_1()
+        Console.WriteLine(playerName + ": Get up " + playerName + ".")
+        Console.ReadKey()
+        Console.WriteLine()
+    End Sub
     Sub Credits()
         Console.WriteLine("------------Credits------------")
         Console.WriteLine()
