@@ -1,6 +1,8 @@
 ﻿Module Re_Memorize
     Dim playerName As String
-    'Ferdinan
+    Dim genRef As String
+    Dim year As Integer = 2086
+    'Ferdinan - Doctor
     'Johnny
     '
     Sub Main()
@@ -12,15 +14,15 @@
         Console.WriteLine()
         Console.WriteLine("Press Any Key to continue.")
         Console.ReadKey()
-        Console.WriteLine()
-        Console.WriteLine()
+        Console.Clear()
         Dim play As Boolean = 0
         While play = 0
             Console.WriteLine()
             Console.WriteLine("Welcome to Re:Memorize")
-            Threading.Thread.Sleep(2000)
+            Threading.Thread.Sleep(1000)
             Console.WriteLine()
             Console.WriteLine("[1] Start  [2] Credits [3] Exit")
+            Console.Write("$")
             Dim start As String = Console.ReadLine()
             If start = "1" Then
                 Console.WriteLine("GameStart")
@@ -29,7 +31,7 @@
                 Credits()
             ElseIf start = "3" Then
                 Console.WriteLine("Thank's for playing! Please comeback and visit!")
-                Threading.Thread.Sleep(5000)
+                Threading.Thread.Sleep(3000)
                 Exit Sub
             Else
                 Console.WriteLine("I don't understand what you want me to do.")
@@ -47,6 +49,7 @@
         playerName = Console.ReadLine()
         Console.WriteLine("You said your name is " + playerName + ". Correct?")
         Console.WriteLine("[1] That's Right [2] Nope, that's not right.")
+        Console.Write("$")
         nameChk = Console.ReadLine()
 
         While nameCor = False
@@ -61,17 +64,33 @@
             If nameCor = False Then
                 Console.WriteLine("You said your name is " + playerName + ". Correct?")
                 Console.WriteLine("[1] That's Right [2] Nope, that's not right.")
+                Console.Write("$")
                 nameChk = Console.ReadLine()
             End If
         End While
         Console.WriteLine("Well It's nice to meet you " + playerName + ".")
+        Console.Write("*")
+        Console.ReadKey()
+        Console.WriteLine("Are you Male or Female")
+        Console.WriteLine("[1] Male  [2] Female")
+        Console.Write("$")
+        Dim genSwitch As Boolean
+        genSwitch = Console.ReadLine
+        If genSwitch = 1 Then
+            genRef = "him"
+        Else
+            genRef = "her"
+        End If
         Threading.Thread.Sleep(1000)
         Console.WriteLine("I will now tell you how to play.")
+        Console.Write("*")
         Console.ReadKey()
         Console.Clear()
+        Threading.Thread.Sleep(500)
         'Get Instructions from instructions module
         Instructions()
         Console.WriteLine("[1] Yes I got it. [2] Could you repeat that?")
+        Console.Write("$")
         Dim numInput As String
         numInput = Console.ReadLine()
         Dim Choice As Boolean = False
@@ -95,6 +114,7 @@
                     'Re-explain instructions
                     Instructions()
                     Console.WriteLine("[1] Yes I got it. [2] Could you repeat that?")
+                    Console.Write("$")
                     numInput = ""
                     numInput = Console.ReadLine()
                     Exit Select
@@ -103,6 +123,7 @@
                     Console.WriteLine("I don't understand what you meant by: " + numInput)
                     Console.WriteLine()
                     Console.WriteLine("[1] Yes I got it. [2] Could you repeat that?")
+                    Console.Write("$")
                     numInput = ""
                     numInput = Console.ReadLine()
             End Select
@@ -129,9 +150,17 @@
         Console.WriteLine()
         Console.WriteLine("This game is played by answering questions by selecting a number option from the menu,")
         Console.WriteLine("and then pressing enter.")
-        Console.WriteLine("There will also ocasionaly be an open ended question.")
+        Console.WriteLine("There will also ocasionaly be open ended questions.")
+        Console.WriteLine()
+        Console.WriteLine("Symbols you will find that you will need to know about:")
+        Console.WriteLine("   >>   Is a open ended responce marker. When you see this you can type a responce.")
+        Console.WriteLine()
+        Console.WriteLine("   $    Is a simple question marker. Here you select a responce from the prompt.")
+        Console.WriteLine()
+        Console.WriteLine("   *    If you see this marker you press the Enter button to continue.")
         Console.WriteLine()
         Console.WriteLine("Do you understand this " + playerName + "?")
+        Console.Write("$")
     End Sub
 
     Sub MainGame()
@@ -142,30 +171,40 @@
 
     Sub Chapter0()
         Console.WriteLine("Voice: " + playerName + " Run! You got to get out of there! Quick!")
+        Console.Write("*")
         Console.ReadKey()
         Console.WriteLine(playerName + ": Don't worry, I'll be fine. I'm almost there.")
         Console.WriteLine()
+        Console.Write("*")
         Console.ReadKey()
         Console.WriteLine("You run around a corner and get hit by a S.A.B.R.E. Force Agent")
         Console.WriteLine()
         Threading.Thread.Sleep(2000)
         Console.WriteLine("You blacked out...")
+        Console.Write("*")
         Console.ReadKey()
         Console.WriteLine()
         Console.WriteLine(playerName + ": (Screaming In Pain)")
+        Console.Write("*")
         Console.ReadKey()
         Console.WriteLine(playerName + "AHHHHHHH! AHHHHHHHH! AHHHHHHHHH!")
-        Console.Clear()
+        Console.Write("*")
         Console.ReadKey()
+        Console.Clear()
         Console.WriteLine("Machine shuts off...")
+        Console.Write("*")
         Console.ReadKey()
         Console.WriteLine("Robotic Voice: Memory Erase complete.")
+        Console.Write("*")
         Console.ReadKey()
         Console.WriteLine(playerName + ": (breathing heavy)")
+        Console.Write("*")
         Console.ReadKey()
         Console.WriteLine("You realize you are laying in the center of a room.")
+        Console.Write("*")
         Console.ReadKey()
         Console.WriteLine("A person approches you holding some files. There dressed in a doctor uniform maybe?")
+        Console.Write("*")
         Console.ReadKey()
         Console.WriteLine("Stranger: What is your name?")
         Console.Write(">> ")
@@ -192,29 +231,80 @@
 
         Console.WriteLine()
         Console.WriteLine("Stranger: What year is it?")
-        Console.ReadKey()
-        Console.WriteLine(playerName + ": I don't know")
-        Console.ReadKey()
-        Console.WriteLine("Stranger: What did you say your name was?")
-        Console.ReadKey()
-        Console.WriteLine(playerName + ": ... " + playerName + ".")
-        Console.ReadKey()
-        Console.WriteLine("Stranger: Do you know where you are?")
-        Console.ReadKey()
-        Console.WriteLine(playerName + ": I don't know")
-        Console.ReadKey()
-        Console.WriteLine("Stranger: We'll get those last few memories scraped away soon.")
-        Console.ReadKey()
-        Console.WriteLine("Stranger wallks away leaving you alone.")
-        Console.WriteLine()
-        Console.ReadKey()
+        Console.Write(">> ")
+        Dim vYear As Integer
+        vYear = Console.ReadLine()
+        If vYear = year Then
+            Console.WriteLine("Stranger: Huh..., Dr Ferdnan this paicent is showing resistance.")
+            Console.WriteLine("*")
+            Console.ReadKey()
+            Console.WriteLine("Dr. Ferdnan: Okay, send " + genRef + " to me. I'll take care of " + genRef + " myself.")
+            Console.WriteLine("*")
+            Console.ReadKey()
+            Console.WriteLine("Stranger: Alright. As you wish.")
+            Console.WriteLine("*")
+            Console.ReadKey()
+            Console.WriteLine("Stranger wallks away leaving you alone.")
+            Console.Write("*")
+            Console.WriteLine()
+            Console.ReadKey()
+        Else
+            nameCheck = ""
+            Console.WriteLine("Stranger: What did you say your name was?")
+            Console.Write(">>")
+            i = 0
+            If nameCheck = playerName Then
+                i = 1
+            End If
+            While i = 0
+                Console.WriteLine()
+                Console.WriteLine("Use your name that you used at the start of the game: " + playerName)
+                Console.WriteLine()
+                Console.WriteLine("Stranger: What did you say your name was?")
+                Console.Write(">> ")
+                nameCheck = ""
+                nameCheck = Console.ReadLine()
+                If nameCheck = playerName Then
+                    i = 1
+                End If
+            End While
+
+            Console.WriteLine("Stranger: Do you know where you are?")
+            Console.Write("*")
+            Console.ReadKey()
+            Console.WriteLine(playerName + ": I don't know")
+            Console.Write("*")
+            Console.ReadKey()
+            Console.WriteLine("Stranger: We'll get those last few memories scraped away soon.")
+            Console.Write("*")
+            Console.ReadKey()
+            Console.WriteLine("Stranger wallks away leaving you alone.")
+            Console.Write("*")
+            Console.WriteLine()
+            Console.ReadKey()
+        End If
         Chapter0_1()
     End Sub
 
     Sub Chapter0_1()
         Console.WriteLine(playerName + ": Get up " + playerName + ".")
+        Console.Write("*")
         Console.ReadKey()
-        Console.WriteLine()
+        Console.WriteLine("A flying robot approches you,")
+        Console.Write("*")
+        Console.ReadKey()
+        Console.WriteLine("and scans you with some sort of laser.")
+        Console.Write("*")
+        Console.ReadKey()
+        Dim forRobot As Boolean = False
+        While forRobot = False
+            Console.WriteLine("Robot: Please step forward.")
+            Console.WriteLine("")
+            Console.WriteLine("-- Start walking forward? --")
+            Console.WriteLine("")
+            Console.WriteLine("[1] Walk Forward  [2] Look around  [3] Do nothing")
+            forRobot = True
+        End While
     End Sub
     Sub Credits()
         Console.WriteLine("------------Credits------------")
