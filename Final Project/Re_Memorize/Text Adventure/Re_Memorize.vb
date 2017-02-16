@@ -208,11 +208,32 @@
             Console.WriteLine("Stranger: Very well.")
         ElseIf localQ = "" Then
             Console.WriteLine("Stranger: How do you know that?")
-            Console.ReadKey()
-
+            Console.WriteLine("[1] ...  [2] I don't know")
+            Dim knowLocal As Integer
+            Dim kLocal As Boolean
+            Console.WriteLine()
+            knowLocal = Console.ReadLine()
+            While kLocal = False
+                If knowLocal = 1 Then
+                    kLocal = True
+                ElseIf knowLocal = 2 Then
+                    Console.WriteLine("Stranger: Okay.")
+                    kLocal = True
+                Else
+                    Console.WriteLine("Invalid Command.")
+                    Threading.Thread.Sleep(500)
+                    Console.WriteLine()
+                    Console.WriteLine("[1] ...  [2] I don't know")
+                    knowLocal = ""
+                    knowLocal = Console.ReadLine()
+                End If
+            End While
         Else
 
         End If
+        Console.WriteLine("Stranger: We'll get those last few memories scraped away soon.")
+        Console.ReadKey()
+
     End Sub
 
     Sub Credits()
