@@ -3,6 +3,8 @@
     Dim genRef As String
     Dim year As Integer = 2086
     Dim cWhile As Boolean = True
+    Dim memoryHunter As Boolean = False
+    Dim leaper As Boolean = False
     'Ferdinan - Doctor
     'Johnny
     '
@@ -52,7 +54,7 @@
         Console.WriteLine("[1] That's Right [2] Nope, that's not right.")
         Console.Write("$")
         nameChk = Console.ReadLine()
-
+        Chapter0_2()
         While nameCor = False
             If nameChk = 1 Then
                 nameCor = True
@@ -285,6 +287,7 @@
             Console.ReadKey()
         End If
         Chapter0_1()
+        Chapter0_2()
     End Sub
 
     Sub Chapter0_1()
@@ -302,14 +305,39 @@
             Console.WriteLine("Robot: Please step forward.")
             Console.WriteLine("")
             Console.WriteLine("-- Start walking forward? --")
-            cWhile = True
-                Console.WriteLine("")
-                Console.WriteLine("[1] Walk Forward  [2] Look around  [3] Do nothing")
-                Dim pathChoice1 As Integer = 0
+
+            Console.WriteLine("")
+            Console.WriteLine("[1] Walk Forward  [2] Look around  [3] Do nothing")
+            Console.Write(">> ")
+            Dim pathChoice1 As Integer = 0
+            pathChoice1 = Console.ReadLine()
             If pathChoice1 = 1 Then
                 forRobot = True
             ElseIf pathChoice1 = 2 Then
                 'Look Around
+                Console.WriteLine("You look around,")
+                Console.Write("*")
+                Console.ReadKey()
+                Console.WriteLine("In front of you is a glowing hallographic orange path that leads down a hallway.")
+                Console.Write("*")
+                Console.ReadKey()
+                Console.WriteLine("Robot: Please step forward.")
+                Console.Write("*")
+                Console.ReadKey()
+                Console.WriteLine("To your left is a solid white wall with futuristic style lights decorating the edges.")
+                Console.Write("*")
+                Console.ReadKey()
+                Console.WriteLine("Robot: Please step forward.")
+                Console.Write("*")
+                Console.ReadKey()
+                Console.WriteLine("You look behind you but it's just another wall.")
+                Console.Write("*")
+                Console.ReadKey()
+                Console.WriteLine("Robot: Please step forward.")
+                Console.Write("*")
+                Console.ReadKey()
+                Console.WriteLine("To your right, you see through a pane of glass some people in the same uniform that the other guy was in.")
+                Console.WriteLine("They appear to be talking about something.")
             ElseIf pathChoice1 = 3 Then
                 Console.WriteLine("You just stared at the robot...")
                 Console.Write("*")
@@ -318,7 +346,100 @@
                 Console.WriteLine("I did not understand that command.")
             End If
         End While
+        Console.WriteLine()
     End Sub
+
+    Sub Chapter0_2()
+        Console.WriteLine("Robot: Right this way")
+        Console.WriteLine("*")
+        Console.ReadLine()
+        Console.WriteLine("Walking forward...")
+        Dim counter As Integer
+        For counter = 1 To 40
+            Console.Write(". ")
+            Threading.Thread.Sleep(600)
+
+            If counter = 7 Then
+                Console.WriteLine("")
+                Console.WriteLine("Unknown: #$%&*$*^(^%$")
+                Console.WriteLine("[1] Hello...?  [2] ...")
+                Console.Write("$")
+                Console.ReadLine() 'Does not take input. This conversation does not effect the story and will happen no matter what.
+
+            ElseIf counter = 13 Then
+                Console.WriteLine("")
+                Console.WriteLine("Unknown: C$n 7o6  Hr4e m3(")
+                Console.WriteLine("[1] Hello....?  [2] ...Someone there?  [3] ...")
+                Console.Write("$")
+                Console.ReadLine()
+
+            ElseIf counter = 20 Then
+                Console.WriteLine("")
+                Console.WriteLine("Unknown: Can you hear me?")
+                Threading.Thread.Sleep(200)
+                Dim hearL As Boolean = False
+                Dim hear As String = ""
+                While hearL = False
+                    hear = ""
+                    Console.WriteLine(playerName + ". Can you hear me?")
+                    Console.WriteLine("[1] ...Yes...  [2] ...")
+                    Console.Write("$")
+                    hear = Console.ReadLine()
+                    If hear = "1" Then
+                        hearL = True
+                    End If
+                End While
+
+            ElseIf counter = 25 Then
+                Console.WriteLine("")
+                Console.WriteLine("Unknown: Good, listen.")
+                Console.Write("*")
+                Console.ReadLine()
+                Console.WriteLine("Unknown: Their about to wipe your brain. If you want to live, you need to listen to me.")
+                'Start first story arc choice
+                Console.Write("*")
+                Console.ReadLine()
+                Console.WriteLine()
+                Dim hearL As Boolean = False
+                Dim hear As String = ""
+                While hearL = False
+                    Console.WriteLine("[1] Okay...  [2] No...")
+                    Console.Write("$")
+                    hear = Console.ReadLine()
+                    If hear = "1" Then
+                        Console.WriteLine("Unknown: Be ready to move when I give the word.")
+                        MemoryHunter = True
+                        hearL = True
+                    ElseIf hear = "2" Then
+                        Console.WriteLine("Unknown: You have got to believe me. You will not live if you don't trust me here.")
+                        hearL = True
+                    Else
+                        Console.WriteLine("Invalid command")
+                    End If
+                End While
+
+            ElseIf counter = 30 Then
+                If memoryHunter = False Then
+                    Dim hear As String = ""
+                    Dim hearL As Boolean = False
+                    While hearL = False
+                        Console.Write("$")
+                    Console.WriteLine("[1] Why should I trust you?  [2] I don't trust you. Leave me alone.")
+                    hear = Console.ReadLine()
+                        If hear = "1" Then
+                            Console.WriteLine("Unknown: Because you will cease to exist.")
+                        ElseIf hear = "2" Then
+                            Console.WriteLine("Unknown: Guess your too far gone to help. This was your decision.")
+                            leaper = True
+                        Else
+                            Console.WriteLine("Invalid command")
+                        End If
+                    End While
+                End If
+            End If
+        Next
+    End Sub
+
     Sub Credits()
         Console.WriteLine("------------Credits------------")
         Console.WriteLine()
