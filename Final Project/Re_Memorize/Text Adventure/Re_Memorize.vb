@@ -2,6 +2,7 @@
     Dim playerName As String
     Dim genRef As String
     Dim year As Integer = 2086
+    Dim cWhile As Boolean = True
     'Ferdinan - Doctor
     'Johnny
     '
@@ -301,9 +302,21 @@
             Console.WriteLine("Robot: Please step forward.")
             Console.WriteLine("")
             Console.WriteLine("-- Start walking forward? --")
-            Console.WriteLine("")
-            Console.WriteLine("[1] Walk Forward  [2] Look around  [3] Do nothing")
-            forRobot = True
+            cWhile = True
+                Console.WriteLine("")
+                Console.WriteLine("[1] Walk Forward  [2] Look around  [3] Do nothing")
+                Dim pathChoice1 As Integer = 0
+            If pathChoice1 = 1 Then
+                forRobot = True
+            ElseIf pathChoice1 = 2 Then
+                'Look Around
+            ElseIf pathChoice1 = 3 Then
+                Console.WriteLine("You just stared at the robot...")
+                Console.Write("*")
+                Console.ReadKey()
+            Else
+                Console.WriteLine("I did not understand that command.")
+            End If
         End While
     End Sub
     Sub Credits()
