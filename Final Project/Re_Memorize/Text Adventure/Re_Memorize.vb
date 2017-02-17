@@ -54,7 +54,6 @@
         Console.WriteLine("[1] That's Right [2] Nope, that's not right.")
         Console.Write("$")
         nameChk = Console.ReadLine()
-        Chapter0_2()
         While nameCor = False
             If nameChk = 1 Then
                 nameCor = True
@@ -77,9 +76,9 @@
         Console.WriteLine("Are you Male or Female")
         Console.WriteLine("[1] Male  [2] Female")
         Console.Write("$")
-        Dim genSwitch As Boolean
+        Dim genSwitch As String
         genSwitch = Console.ReadLine
-        If genSwitch = 1 Then
+        If genSwitch = "1" Then
             genRef = "him"
         Else
             genRef = "her"
@@ -173,6 +172,18 @@
     End Sub
 
     Sub Chapter0()
+        Console.WriteLine()
+        Console.WriteLine()
+        Console.WriteLine()
+        Console.WriteLine("          -----------------------------------------------")
+        Console.WriteLine("          -----------------------------------------------")
+        Console.WriteLine("          ------------------ Chapter 0 ------------------")
+        Console.WriteLine("          ------------------- Reboot --------------------")
+        Console.WriteLine("          -----------------------------------------------")
+        Console.WriteLine("          -----------------------------------------------")
+        Console.ReadLine()
+        Console.Clear()
+        Threading.Thread.Sleep(200)
         Console.WriteLine("Voice: " + playerName + " Run! You got to get out of there! Quick!")
         Console.Write("*")
         Console.ReadKey()
