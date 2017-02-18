@@ -46,7 +46,7 @@
     Sub GameStart()
         Console.WriteLine()
         Console.WriteLine("Hello, stranger. What's your name?")
-        Console.Write(">>")
+        Console.Write(">> ")
         Dim nameCor As Boolean = False
         Dim nameChk As Integer = 0
         playerName = Console.ReadLine()
@@ -72,7 +72,7 @@
         End While
         Console.WriteLine("Well It's nice to meet you " + playerName + ".")
         Console.Write("*")
-        Console.ReadKey()
+        Console.ReadLine()
         Console.WriteLine("Are you Male or Female")
         Console.WriteLine("[1] Male  [2] Female")
         Console.Write("$")
