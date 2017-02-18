@@ -450,6 +450,9 @@
             End If
         Next
     End Sub
+    Function battleLv1()
+        
+    End Function
 
     Sub Credits()
         Console.WriteLine("------------Credits------------")
